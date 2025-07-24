@@ -1,53 +1,61 @@
 // Shared Navbar and Footer HTML
 function loadNavbar() {
+    // Detect if we're on the root index page or in templates folder
+    const isRootPage = window.location.pathname === '/' || window.location.pathname.endsWith('/index.html') || !window.location.pathname.includes('/templates/');
+    
+    // Set appropriate path prefixes
+    const templatePrefix = isRootPage ? 'templates/' : '';
+    const imagePrefix = isRootPage ? 'images/' : '../images/';
+    const indexLink = isRootPage ? 'index.html' : '../index.html';
+    
     const navbarHTML = `
         <header class="header">
             <div class="container">
                 <nav class="nav">
                     <div class="logo">
-                        <img src="../images/TransparentColorLogo.png" alt="Driving Forward Logo">
+                        <img src="${imagePrefix}TransparentColorLogo.png" alt="Driving Forward Logo">
                     </div>
                     <ul class="nav-menu">
                         <li class="nav-item">
                             <span class="nav-header">Our Programs <span class="dropdown-arrow">▼</span></span>
                             <div class="dropdown-menu">
-                                <a href="flagship.html">Flagship Program</a>
-                                <a href="resource.html">Resource Center</a>
-                                <a href="recruiting.html">Recruiting</a>
-                                <a href="school.html">Your School</a>
+                                <a href="${templatePrefix}flagship.html">Flagship Program</a>
+                                <a href="${templatePrefix}resource.html">Resource Center</a>
+                                <a href="${templatePrefix}recruiting.html">Recruiting</a>
+                                <a href="${templatePrefix}school.html">Your School</a>
                             </div>
                         </li>
                         <li class="nav-item">
                             <span class="nav-header">Get Involved <span class="dropdown-arrow">▼</span></span>
                             <div class="dropdown-menu">
-                                <a href="volunteer.html">Become a Volunteer</a>
-                                <a href="sponsor.html">Project Sponsor</a>
-                                <a href="donate.html">Donate</a>
+                                <a href="${templatePrefix}volunteer.html">Become a Volunteer</a>
+                                <a href="${templatePrefix}sponsor.html">Project Sponsor</a>
+                                <a href="${templatePrefix}donate.html">Donate</a>
                             </div>
                         </li>
                         <li class="nav-item">
                             <span class="nav-header">Events <span class="dropdown-arrow">▼</span></span>
                             <div class="dropdown-menu">
-                                <a href="events.html#upcoming-events">Upcoming Events</a>
-                                <a href="events.html#webinars">Webinars</a>
-                                <a href="events.html#networking">Networking Sessions</a>
-                                <a href="events.html#workshops">Workshops</a>
+                                <a href="${templatePrefix}events.html#upcoming-events">Upcoming Events</a>
+                                <a href="${templatePrefix}events.html#webinars">Webinars</a>
+                                <a href="${templatePrefix}events.html#networking">Networking Sessions</a>
+                                <a href="${templatePrefix}events.html#workshops">Workshops</a>
                             </div>
                         </li>
                         <li class="nav-item">
                             <span class="nav-header">About Us <span class="dropdown-arrow">▼</span></span>
                             <div class="dropdown-menu">
-                                <a href="news.html">News</a>
-                                <a href="about.html#team">Our Story</a>
-                                <a href="about.html#impact">Our Team</a>
-                                <a href="volunteer.html">Volunteer</a>
-                                <a href="about.html#supporters">Supporters</a>
-                                <a href="about.html#contact">Contact Us</a>
+                                <a href="${templatePrefix}news.html">News</a>
+                                <a href="${templatePrefix}about.html#team">Our Story</a>
+                                <a href="${templatePrefix}about.html#impact">Our Team</a>
+                                <a href="${templatePrefix}volunteer.html">Volunteer</a>
+                                <a href="${templatePrefix}about.html#supporters">Supporters</a>
+                                <a href="${templatePrefix}about.html#contact">Contact Us</a>
                             </div>
                         </li>
-                        <li><a href="donate.html">Donate</a></li>
+                        <li><a href="${templatePrefix}donate.html">Donate</a></li>
                     </ul>
-                    <a href="index.html#apply" class="cta-button">Apply Now</a>
+                    <a href="${indexLink}#apply" class="cta-button">Apply Now</a>
                 </nav>
             </div>
         </header>
@@ -58,6 +66,11 @@ function loadNavbar() {
 }
 
 function loadFooter() {
+    // Use same detection logic as navbar
+    const isRootPage = window.location.pathname === '/' || window.location.pathname.endsWith('/index.html') || !window.location.pathname.includes('/templates/');
+    const templatePrefix = isRootPage ? 'templates/' : '';
+    const indexLink = isRootPage ? 'index.html' : '../index.html';
+    
     const footerHTML = `
         <footer class="footer">
             <div class="container">
@@ -65,28 +78,28 @@ function loadFooter() {
                     <div class="footer-section">
                         <h4>Programs</h4>
                         <ul>
-                            <li><a href="flagship.html">Flagship Program</a></li>
-                            <li><a href="resource.html">Resource Center</a></li>
-                            <li><a href="recruiting.html">Recruiting</a></li>
-                            <li><a href="school.html">Your School</a></li>
+                            <li><a href="${templatePrefix}flagship.html">Flagship Program</a></li>
+                            <li><a href="${templatePrefix}resource.html">Resource Center</a></li>
+                            <li><a href="${templatePrefix}recruiting.html">Recruiting</a></li>
+                            <li><a href="${templatePrefix}school.html">Your School</a></li>
                         </ul>
                     </div>
                     
                     <div class="footer-section">
                         <h4>Get Involved</h4>
                         <ul>
-                            <li><a href="volunteer.html">Volunteer</a></li>
-                            <li><a href="donate.html">Donate</a></li>
-                            <li><a href="sponsor.html">Corporate Sponsors</a></li>
-                            <li><a href="index.html#partnership">University Partners</a></li>
+                            <li><a href="${templatePrefix}volunteer.html">Volunteer</a></li>
+                            <li><a href="${templatePrefix}donate.html">Donate</a></li>
+                            <li><a href="${templatePrefix}sponsor.html">Corporate Sponsors</a></li>
+                            <li><a href="${indexLink}#partnership">University Partners</a></li>
                         </ul>
                     </div>
                     
                     <div class="footer-section">
                         <h4>Resources</h4>
                         <ul>
-                            <li><a href="index.html#apply">Student Applications</a></li>
-                            <li><a href="events.html">Upcoming Events</a></li>
+                            <li><a href="${indexLink}#apply">Student Applications</a></li>
+                            <li><a href="${templatePrefix}events.html">Upcoming Events</a></li>
                             <li><a href="#">Blog</a></li>
                             <li><a href="#">FAQ</a></li>
                         </ul>
@@ -95,10 +108,10 @@ function loadFooter() {
                     <div class="footer-section">
                         <h4>About</h4>
                         <ul>
-                            <li><a href="about.html#mission">Our Mission</a></li>
-                            <li><a href="about.html#team">Board Members</a></li>
-                            <li><a href="about.html#impact">Impact Reports</a></li>
-                            <li><a href="about.html#contact">Contact Us</a></li>
+                            <li><a href="${templatePrefix}about.html#mission">Our Mission</a></li>
+                            <li><a href="${templatePrefix}about.html#team">Board Members</a></li>
+                            <li><a href="${templatePrefix}about.html#impact">Impact Reports</a></li>
+                            <li><a href="${templatePrefix}about.html#contact">Contact Us</a></li>
                         </ul>
                     </div>
                 </div>
@@ -373,7 +386,10 @@ function makeLogoClickable() {
     if (logo) {
         logo.style.cursor = 'pointer';
         logo.addEventListener('click', function() {
-            window.location.href = 'index.html';
+            // Use same detection logic for correct path
+            const isRootPage = window.location.pathname === '/' || window.location.pathname.endsWith('/index.html') || !window.location.pathname.includes('/templates/');
+            const indexLink = isRootPage ? 'index.html' : '../index.html';
+            window.location.href = indexLink;
         });
     }
 }
