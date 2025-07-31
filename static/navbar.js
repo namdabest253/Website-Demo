@@ -1,3 +1,43 @@
+// Announcement Banner
+function loadAnnouncementBanner() {
+    // Check if banner was previously closed in this session
+    if (sessionStorage.getItem('announcementBannerClosed') === 'true') {
+        return;
+    }
+    
+    // Detect if we're on the root index page or in templates folder
+    const isRootPage = window.location.pathname === '/' || window.location.pathname.endsWith('/index.html') || !window.location.pathname.includes('/templates/');
+    const imagePrefix = isRootPage ? 'images/' : '../images/';
+    
+    const bannerHTML = `
+        <div class="announcement-banner" id="announcementBanner">
+            <div class="announcement-content">
+                <span class="announcement-text">
+                    <a href="${imagePrefix}DRIVING FORWARD 2025 Program Review.pdf" target="_blank" rel="noopener noreferrer">See Our 2025 Program Review</a>
+                </span>
+                <button class="announcement-close" onclick="closeAnnouncementBanner()" aria-label="Close announcement">
+                    ✕
+                </button>
+            </div>
+        </div>
+    `;
+    
+    document.body.insertAdjacentHTML('afterbegin', bannerHTML);
+    document.body.classList.add('has-announcement-banner');
+}
+
+function closeAnnouncementBanner() {
+    const banner = document.getElementById('announcementBanner');
+    if (banner) {
+        banner.style.animation = 'slideUp 0.3s ease-out forwards';
+        setTimeout(() => {
+            banner.remove();
+            document.body.classList.remove('has-announcement-banner');
+        }, 300);
+        sessionStorage.setItem('announcementBannerClosed', 'true');
+    }
+}
+
 // Shared Navbar and Footer HTML
 function loadNavbar() {
     // Detect if we're on the root index page or in templates folder
@@ -396,6 +436,9 @@ function makeLogoClickable() {
 
 // Initialize everything when DOM is loaded
 document.addEventListener('DOMContentLoaded', function() {
+    // Load announcement banner first
+    loadAnnouncementBanner();
+    
     // Load shared components
     loadNavbar();
     loadFooter();

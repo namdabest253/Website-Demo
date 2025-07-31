@@ -37,6 +37,122 @@ body {
     overflow-x: hidden;
 }
 
+/* Announcement Banner */
+.announcement-banner {
+    background: linear-gradient(135deg, var(--primary-blue), var(--primary-green));
+    color: white;
+    padding: 12px 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1001;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    animation: slideDown 0.5s ease-out;
+}
+
+/* Adjust body to account for fixed banner */
+body.has-announcement-banner {
+    padding-top: 48px;
+}
+
+/* Adjust header position when banner is present */
+body.has-announcement-banner .header {
+    top: 48px;
+}
+
+.announcement-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    padding: 0 20px;
+}
+
+.announcement-text {
+    font-size: 1rem;
+    font-weight: 500;
+    text-align: center;
+}
+
+.announcement-text a {
+    color: white;
+    text-decoration: underline;
+    font-weight: 600;
+    transition: opacity 0.3s ease;
+}
+
+.announcement-text a:hover {
+    opacity: 0.9;
+    text-decoration: none;
+}
+
+.announcement-close {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 1.2rem;
+    cursor: pointer;
+    padding: 4px 8px;
+    border-radius: 4px;
+    position: absolute;
+    right: 20px;
+    transition: background-color 0.3s ease;
+}
+
+.announcement-close:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+@keyframes slideDown {
+    from {
+        transform: translateY(-100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes slideUp {
+    from {
+        transform: translateY(0);
+        opacity: 1;
+    }
+    to {
+        transform: translateY(-100%);
+        opacity: 0;
+    }
+}
+
+@media (max-width: 768px) {
+    .announcement-banner {
+        padding: 10px 0;
+    }
+    
+    .announcement-text {
+        font-size: 0.9rem;
+        padding-right: 40px;
+    }
+    
+    .announcement-close {
+        font-size: 1.1rem;
+        right: 15px;
+    }
+    
+    /* Adjust mobile spacing for smaller banner */
+    body.has-announcement-banner {
+        padding-top: 44px;
+    }
+    
+    body.has-announcement-banner .header {
+        top: 44px;
+    }
+}
+
 .container {
     max-width: 1400px;
     margin: 0 auto;
