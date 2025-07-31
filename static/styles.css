@@ -1,3 +1,9 @@
+input {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    }
+
 :root {
     /* Braven-inspired professional color palette */
     --primary-blue: #1a73e8;
@@ -368,7 +374,7 @@ body.has-announcement-banner .header {
     position: relative;
     border-radius: var(--border-radius);
     border-left: 6px solid var(--primary-green);
-    height: 400px; /* Match quote + buttons total height */
+    height: 450px; /* Increased height to accommodate dots */
     margin: 0 auto; /* Reset margin for proper alignment */
 }
 
@@ -376,7 +382,7 @@ body.has-announcement-banner .header {
     background: var(--white);
     border-radius: var(--border-radius);
     box-shadow: var(--card-shadow);
-    padding: 30px 20px 10px 20px;
+    padding: 30px 20px 50px 20px;
     text-align: center;
     position: relative;
     height: 100%;
@@ -435,15 +441,17 @@ body.has-announcement-banner .header {
     -webkit-box-orient: vertical;
 }
 
-.hero-carousel-nav {
+.hero-carousel-nav,
+.hero-carousel-dots {
     display: flex;
     justify-content: center;
     gap: 8px;
     margin-top: 20px;
     position: absolute;
-    bottom: 10px;
+    bottom: 15px;
     left: 50%;
     transform: translateX(-50%);
+    z-index: 10;
 }
 
 .hero-carousel-dot {
@@ -1053,8 +1061,12 @@ body.has-announcement-banner .header {
     
     .hero-carousel {
         max-width: 350px;
-        height: 307px; /* Match quote + buttons total height on mobile */
+        height: 350px; /* Increased mobile height to accommodate dots */
         margin: 0 auto;
+    }
+    
+    .hero-carousel-container {
+        padding: 25px 15px 45px 15px;
     }
     
     .hero-carousel-slide img {
@@ -1072,6 +1084,16 @@ body.has-announcement-banner .header {
         font-size: 0.85rem;
         line-height: 1.3;
         -webkit-line-clamp: 3;
+    }
+    
+    .hero-carousel-dots {
+        bottom: 12px;
+        gap: 6px;
+    }
+    
+    .hero-carousel-dot {
+        width: 10px;
+        height: 10px;
     }
     
     .hero h1 {
