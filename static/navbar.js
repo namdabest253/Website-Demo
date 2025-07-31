@@ -157,7 +157,7 @@ function loadFooter() {
                 </div>
                 
                 <div class="footer-bottom">
-                    <p>&copy; 2025 Driving Forward. All rights reserved. | Unlocking social capital for college students.</p>
+                    <p>&copy; Driving Forward Institute NFP Inc. - Copyright 2021</p>
                 </div>
             </div>
         </footer>
