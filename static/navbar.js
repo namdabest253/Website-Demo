@@ -86,11 +86,10 @@ function loadNavbar() {
                             <span class="nav-header">About Us <span class="dropdown-arrow">▼</span></span>
                             <div class="dropdown-menu">
                                 <a href="${templatePrefix}news.html">News</a>
-                                <a href="${templatePrefix}about.html#team">Our Story</a>
-                                <a href="${templatePrefix}about.html#impact">Our Team</a>
-                                <a href="${templatePrefix}volunteer.html">Volunteer</a>
-                                <a href="${templatePrefix}about.html#supporters">Supporters</a>
-                                <a href="${templatePrefix}about.html#contact">Contact Us</a>
+                                <a href="${templatePrefix}story.html">Our Story</a>
+                                <a href="${templatePrefix}team.html">Our Team</a>
+                                <a href="${templatePrefix}supporters.html">Supporters</a>
+                                <a href="${templatePrefix}contact.html">Contact Us</a>
                             </div>
                         </li>
                         <li><a href="${templatePrefix}donate.html">Donate</a></li>
