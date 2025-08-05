@@ -1513,17 +1513,6 @@ body.has-announcement-banner .header {
     opacity: 0.95;
 }
 
-.sponsor-cta .btn-primary {
-    background: white;
-    color: var(--primary-green);
-    border: none;
-}
-
-.sponsor-cta .btn-primary:hover {
-    background: var(--primary-blue);
-    color: white;
-}
-
 /* Get Involved Responsive Design */
 @media (max-width: 768px) {
     .get-involved-hero h1 {
