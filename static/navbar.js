@@ -95,7 +95,7 @@ function loadNavbar() {
                         </li>
                         <li><a href="${templatePrefix}donate.html">Donate</a></li>
                     </ul>
-                    <a href="${indexLink}#apply" class="cta-button">Apply Now</a>
+                    <a href="${templatePrefix}apply.html" class="cta-button">Apply Now</a>
                 </nav>
             </div>
         </header>
@@ -138,7 +138,7 @@ function loadFooter() {
                     <div class="footer-section">
                         <h4>Resources</h4>
                         <ul>
-                            <li><a href="${indexLink}#apply">Student Applications</a></li>
+                            <li><a href="${templatePrefix}apply.html">Student Applications</a></li>
                             <li><a href="${templatePrefix}events.html">Upcoming Events</a></li>
                             <li><a href="#">Blog</a></li>
                             <li><a href="#">FAQ</a></li>
