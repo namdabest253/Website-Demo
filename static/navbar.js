@@ -61,7 +61,7 @@ function loadNavbar() {
                             <div class="dropdown-menu">
                                 <a href="${templatePrefix}flagship.html">Flagship Program</a>
                                 <a href="${templatePrefix}resource.html">Resource Center</a>
-                                <a href="${templatePrefix}resource.html#personalized-toolkit">Personalized University Tool Kit</a>
+                                <a href="${templatePrefix}resource.html#personalized-toolkit">Personalized University Toolkit</a>
                                 <a href="${templatePrefix}recruiting.html">Recruiting</a>
                                 <a href="${templatePrefix}events.html">Events</a>
                             </div>
@@ -74,7 +74,7 @@ function loadNavbar() {
                                 <a href="${templatePrefix}donate.html">Donate</a>
                             </div>
                         </li>
-                        <li><a href="${templatePrefix}toolkit.html">Tool Kit</a></li>
+                        <li><a href="${templatePrefix}toolkit.html">Toolkit</a></li>
                         <li class="nav-item">
                             <span class="nav-header">About Us <span class="dropdown-arrow">▼</span></span>
                             <div class="dropdown-menu">
