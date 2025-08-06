@@ -758,6 +758,40 @@ body.has-announcement-banner .header {
     font-weight: 600;
 }
 
+/* Card header links should look clickable */
+.card-header-link {
+    color: var(--primary-blue) !important;
+    text-decoration: none;
+    font-size: inherit;
+    font-weight: inherit;
+    cursor: pointer;
+    position: relative;
+    transition: color 0.2s ease;
+}
+
+/* Animated underline effect */
+.card-header-link::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: var(--primary-blue);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.3s ease;
+}
+
+.card-header-link:hover::after {
+    transform: scaleX(1);
+}
+
+/* Ensure non-linked headers stay dark navy without hover effects */
+.program-card h3:not(:has(.card-header-link)) {
+    color: var(--primary-blue);
+}
+
 .program-card p {
     color: var(--text-gray);
     margin-bottom: 24px;
@@ -2216,6 +2250,9 @@ body.has-announcement-banner .header {
     margin-bottom: 0.75rem;
     position: relative;
     padding-left: 1.5rem;
+    font-weight: 500;
+    color: var(--text-gray);
+    line-height: 1.4;
 }
 
 .resource-list li:before {
@@ -2224,11 +2261,14 @@ body.has-announcement-banner .header {
     font-weight: bold;
     position: absolute;
     left: 0;
+    top: 50%;
+    transform: translateY(-50%);
     font-size: 1.2rem;
+    line-height: 1;
 }
 
 .resource-link {
-    color: var(--text-dark);
+    color: var(--text-gray);
     text-decoration: none;
     font-weight: 500;
     transition: all 0.3s ease;
