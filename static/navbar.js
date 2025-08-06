@@ -61,8 +61,10 @@ function loadNavbar() {
                             <div class="dropdown-menu">
                                 <a href="${templatePrefix}flagship.html">Flagship Program</a>
                                 <a href="${templatePrefix}resource.html">Resource Center</a>
+                                <a href="${templatePrefix}resource.html">Personalized University Tool Kit</a>
                                 <a href="${templatePrefix}recruiting.html">Recruiting</a>
                                 <a href="${templatePrefix}school.html">Your School</a>
+                                <a href="${templatePrefix}events.html">Events</a>
                             </div>
                         </li>
                         <li class="nav-item">
@@ -73,22 +75,14 @@ function loadNavbar() {
                                 <a href="${templatePrefix}donate.html">Donate</a>
                             </div>
                         </li>
-                        <li class="nav-item">
-                            <span class="nav-header">Events <span class="dropdown-arrow">▼</span></span>
-                            <div class="dropdown-menu">
-                                <a href="${templatePrefix}events.html#upcoming-events">Upcoming Events</a>
-                                <a href="${templatePrefix}events.html#webinars">Webinars</a>
-                                <a href="${templatePrefix}events.html#networking">Networking Sessions</a>
-                                <a href="${templatePrefix}events.html#workshops">Workshops</a>
-                            </div>
-                        </li>
+                        <li><a href="${templatePrefix}toolkit.html">Tool Kit</a></li>
                         <li class="nav-item">
                             <span class="nav-header">About Us <span class="dropdown-arrow">▼</span></span>
                             <div class="dropdown-menu">
                                 <a href="${templatePrefix}news.html">News</a>
                                 <a href="${templatePrefix}story.html">Our Story</a>
                                 <a href="${templatePrefix}team.html">Our Team</a>
-                                <a href="${templatePrefix}supporters.html">Supporters</a>
+                                <a href="${templatePrefix}sponsors.html">Sponsors</a>
                                 <a href="${templatePrefix}contact.html">Contact Us</a>
                             </div>
                         </li>

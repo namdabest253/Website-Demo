@@ -36,6 +36,11 @@ input {
     box-sizing: border-box;
 }
 
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 180px;
+}
+
 body {
     font-family: var(--body-font);
     line-height: 1.6;
@@ -2628,10 +2633,14 @@ body.has-announcement-banner .header {
 }
 
 .story-logo-container {
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
-    padding-top: 2rem;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    justify-items: center;
+    align-items: center;
+    padding: 2rem 1rem;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
 .story-logo {
@@ -2648,6 +2657,26 @@ body.has-announcement-banner .header {
     box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
 }
 
+/* Sponsor Logo Specific Styles */
+.story-logo-container img {
+    max-width: 280px;
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+    transition: var(--transition);
+    filter: grayscale(20%);
+}
+
+.story-logo-container img:hover {
+    transform: scale(1.05);
+    filter: grayscale(0%);
+}
+
+/* Center single items in grid */
+.story-logo-container img:only-child {
+    grid-column: 2;
+}
+
 /* Story Page Responsive */
 @media (max-width: 992px) {
     .story-content-grid {
@@ -2661,8 +2690,13 @@ body.has-announcement-banner .header {
     
     .story-logo-container {
         order: -1;
-        padding-top: 0;
-        padding-bottom: 1rem;
+        padding: 1rem;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.5rem;
+    }
+    
+    .story-logo-container img {
+        max-width: 150px;
     }
     
     .story-logo {
@@ -2675,8 +2709,29 @@ body.has-announcement-banner .header {
         gap: 2rem;
     }
     
+    .story-logo-container {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
+        padding: 1rem 0.5rem;
+    }
+    
+    .story-logo-container img {
+        max-width: 120px;
+    }
+    
     .story-logo {
         max-width: 200px;
+    }
+}
+
+@media (max-width: 480px) {
+    .story-logo-container {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 0.8rem;
+    }
+    
+    .story-logo-container img {
+        max-width: 100px;
     }
 }
 
