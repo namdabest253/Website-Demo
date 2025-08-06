@@ -2978,10 +2978,19 @@ body.has-announcement-banner .header {
     }
 }
 
+/* Apply Page - Compact Spacing */
+.apply-page .story-hero {
+    padding: 3rem 0 2rem;
+}
+
+.apply-page .main-content {
+    padding: 60px 0 40px;
+}
+
 /* Apply Page - Google Form Styles */
 .google-form-container {
     max-width: 700px;
-    margin: 2rem auto 0;
+    margin: 1rem auto 0;
     padding: 0 1rem;
     text-align: center;
 }
@@ -2999,9 +3008,17 @@ body.has-announcement-banner .header {
 
 /* Responsive adjustments for Google Form */
 @media (max-width: 768px) {
+    .apply-page .story-hero {
+        padding: 2.5rem 0 1.5rem;
+    }
+    
+    .apply-page .main-content {
+        padding: 40px 0 30px;
+    }
+    
     .google-form-container {
         padding: 0 0.5rem;
-        margin: 1rem auto 0;
+        margin: 0.5rem auto 0;
     }
     
     .google-form-iframe {

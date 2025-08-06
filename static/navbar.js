@@ -61,9 +61,8 @@ function loadNavbar() {
                             <div class="dropdown-menu">
                                 <a href="${templatePrefix}flagship.html">Flagship Program</a>
                                 <a href="${templatePrefix}resource.html">Resource Center</a>
-                                <a href="${templatePrefix}resource.html">Personalized University Tool Kit</a>
+                                <a href="${templatePrefix}resource.html#personalized-toolkit">Personalized University Tool Kit</a>
                                 <a href="${templatePrefix}recruiting.html">Recruiting</a>
-                                <a href="${templatePrefix}school.html">Your School</a>
                                 <a href="${templatePrefix}events.html">Events</a>
                             </div>
                         </li>
@@ -285,54 +284,118 @@ function initializeHeroCarousel() {
     
     if (heroCarouselSlides.length === 0) return; // Exit if no carousel found
     
-    let currentSlide = 0;
-    const totalSlides = heroCarouselSlides.length;
-
-    function showSlide(slideIndex) {
-        // Hide all slides
-        heroCarouselSlides.forEach(slide => {
-            slide.classList.remove('active');
-        });
+    // Create a carousel class to encapsulate all functionality
+    class HeroCarousel {
+        constructor(slides, dots) {
+            this.slides = slides;
+            this.dots = dots;
+            this.currentSlide = 0;
+            this.totalSlides = slides.length;
+            this.autoInterval = null;
+            this.isPlaying = false;
+            this.lastInteraction = 0; // Track when user last interacted
+            
+            this.init();
+        }
         
-        // Show target slide
-        heroCarouselSlides[slideIndex].classList.add('active');
+        init() {
+            // Set up initial state
+            this.showSlide(0);
+            this.setupEventListeners();
+            this.start();
+        }
         
-        // Update dots
-        heroCarouselDots.forEach(dot => dot.classList.remove('active'));
-        heroCarouselDots[slideIndex].classList.add('active');
+        showSlide(index) {
+            // Update current slide
+            this.currentSlide = index;
+            
+            // Update slides
+            this.slides.forEach((slide, i) => {
+                slide.classList.toggle('active', i === index);
+            });
+            
+            // Update dots
+            this.dots.forEach((dot, i) => {
+                dot.classList.toggle('active', i === index);
+            });
+        }
         
-        currentSlide = slideIndex;
+        nextSlide() {
+            const nextIndex = (this.currentSlide + 1) % this.totalSlides;
+            this.showSlide(nextIndex);
+        }
+        
+        goToSlide(index) {
+            this.showSlide(index);
+        }
+        
+        start() {
+            if (this.isPlaying) return; // Already playing
+            
+            this.isPlaying = true;
+            this.autoInterval = setInterval(() => {
+                // Only auto-advance if user hasn't interacted recently
+                const timeSinceInteraction = Date.now() - this.lastInteraction;
+                if (timeSinceInteraction > 500) { // 500ms buffer
+                    this.nextSlide();
+                }
+            }, 4000);
+        }
+        
+        stop() {
+            if (!this.isPlaying) return; // Already stopped
+            
+            this.isPlaying = false;
+            if (this.autoInterval) {
+                clearInterval(this.autoInterval);
+                this.autoInterval = null;
+            }
+        }
+        
+        restart() {
+            this.stop();
+            // Small delay to ensure clean restart
+            setTimeout(() => this.start(), 50);
+        }
+        
+        handleUserInteraction() {
+            this.lastInteraction = Date.now();
+            this.restart();
+        }
+        
+        setupEventListeners() {
+            // Dot click handlers
+            this.dots.forEach((dot, index) => {
+                dot.addEventListener('click', () => {
+                    this.goToSlide(index);
+                    this.handleUserInteraction();
+                });
+            });
+            
+            // Hover handlers
+            const carousel = document.querySelector('.hero-carousel');
+            if (carousel) {
+                carousel.addEventListener('mouseenter', () => {
+                    this.stop();
+                });
+                
+                carousel.addEventListener('mouseleave', () => {
+                    this.handleUserInteraction();
+                });
+            }
+        }
+        
+        destroy() {
+            this.stop();
+            // Remove event listeners if needed
+        }
     }
-
-    function nextSlide() {
-        currentSlide = (currentSlide + 1) % totalSlides;
-        showSlide(currentSlide);
-    }
-
-    // Auto-advance carousel every 4 seconds
-    let heroCarouselInterval = setInterval(nextSlide, 4000);
-
-    // Add click handlers for dots
-    heroCarouselDots.forEach((dot, index) => {
-        dot.addEventListener('click', () => {
-            showSlide(index);
-            // Reset auto-advance timer
-            clearInterval(heroCarouselInterval);
-            heroCarouselInterval = setInterval(nextSlide, 4000);
-        });
-    });
-
-    // Pause auto-advance on hover
-    const heroCarousel = document.querySelector('.hero-carousel');
-    if (heroCarousel) {
-        heroCarousel.addEventListener('mouseenter', () => {
-            clearInterval(heroCarouselInterval);
-        });
-
-        heroCarousel.addEventListener('mouseleave', () => {
-            heroCarouselInterval = setInterval(nextSlide, 4000);
-        });
-    }
+    
+    // Create and initialize the carousel
+    const carousel = new HeroCarousel(heroCarouselSlides, heroCarouselDots);
+    
+    // Store reference for potential cleanup
+    window.heroCarouselInstance = carousel;
 }
 
 // LinkedIn posts carousel functionality (for news page)
