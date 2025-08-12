@@ -63,7 +63,6 @@ function loadNavbar() {
                                 <a href="${templatePrefix}resource.html">Resource Center</a>
                                 <a href="${templatePrefix}resource.html#personalized-toolkit">Personalized University Toolkit</a>
                                 <a href="${templatePrefix}recruiting.html">Recruiting</a>
-                                <a href="${templatePrefix}events.html">Events</a>
                             </div>
                         </li>
                         <li class="nav-item">
