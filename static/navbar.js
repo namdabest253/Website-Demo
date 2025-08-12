@@ -122,7 +122,7 @@ function loadFooter() {
                         <ul>
                             <li><a href="${templatePrefix}volunteer.html">Volunteer</a></li>
                             <li><a href="${templatePrefix}donate.html">Donate</a></li>
-                            <li><a href="${templatePrefix}sponsor.html">Corporate Sponsors</a></li>
+                            <li><a href="${templatePrefix}sponsor.html">Project Sponsor</a></li>
                             <li><a href="${indexLink}#partnership">University Partners</a></li>
                         </ul>
                     </div>
@@ -131,19 +131,19 @@ function loadFooter() {
                         <h4>Resources</h4>
                         <ul>
                             <li><a href="${templatePrefix}apply.html">Student Applications</a></li>
-                            <li><a href="${templatePrefix}events.html">Upcoming Events</a></li>
-                            <li><a href="#">Blog</a></li>
-                            <li><a href="#">FAQ</a></li>
+                            <li><a href="${templatePrefix}toolkit.html">Personalized University Toolkit</a></li>
+                            <li><a href="${templatePrefix}recruiting.html">Recruiting</a></li>
+                            <li><a href="${templatePrefix}news.html">News</a></li>
                         </ul>
                     </div>
                     
                     <div class="footer-section">
                         <h4>About</h4>
                         <ul>
-                            <li><a href="${templatePrefix}about.html#mission">Our Mission</a></li>
-                            <li><a href="${templatePrefix}about.html#team">Board Members</a></li>
-                            <li><a href="${templatePrefix}about.html#impact">Impact Reports</a></li>
-                            <li><a href="${templatePrefix}about.html#contact">Contact Us</a></li>
+                            <li><a href="${templatePrefix}story.html">Our Story</a></li>
+                            <li><a href="${templatePrefix}team.html">Our Team</a></li>
+                            <li><a href="${templatePrefix}sponsors.html">Sponsors</a></li>
+                            <li><a href="${templatePrefix}contact.html">Contact Us</a></li>
                         </ul>
                     </div>
                 </div>
