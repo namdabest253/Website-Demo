@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Story - Driving Forward</title>
+    <meta name="description" content="Learn about Driving Forward's mission to unlock social capital for college students through professional development, mentorship, and career opportunities.">
+    
+    <!-- Shared Styles -->
+    <link rel="stylesheet" href="../static/styles.css">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <!-- Navbar and Footer will be loaded by navbar.js -->
+
+    <!-- Enhanced Hero Header -->
+    <section class="hero get-involved-hero">
+        <div class="container">
+            <div class="hero-content fade-in-up">
+                <h1>Your Personalized University Toolkit</h1>
+                <p class="hero-subtitle">
+                    Your University has terrific career resources, but those resources can be challenging to locate. 
+                    Your Personalized University Toolkit delivers the roadmap to your school specific resources and links.
+                </p>
+                <div class="hero-buttons">
+                    <a href="school.html" class="btn-primary">Try Career Chatbot</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- University Toolkit Section -->
+    <section class="university-toolkit-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">University Resource Portal</h2>
+                <p class="section-subtitle">
+                    Access school-specific career resources, guides, and networking opportunities tailored to your university.
+                </p>
+            </div>
+            
+            <div class="toolkit-layout">
+                <!-- Left Side: University Menu -->
+                <div class="university-menu-container">
+                    <div class="search-container">
+                        <input type="text" id="university-search" placeholder="Search universities..." class="university-search-input">
+                        <div class="search-icon">
+                            <img src="../images/search.png" alt="Search" class="search-icon-img">
+                        </div>
+                    </div>
+                    
+                    <div class="university-list" id="university-list">
+                        <div class="university-item" data-university="northwestern">
+                            <img src="../images/northwestern_coat_of_arms.png" alt="Northwestern University" class="university-logo">
+                            <span class="university-name">Northwestern University</span>
+                        </div>
+                        <div class="university-item" data-university="uchicago">
+                            <img src="../images/uchicago_coat_of_arms.png" alt="University of Chicago" class="university-logo">
+                            <span class="university-name">University of Chicago</span>
+                        </div>
+                        <div class="university-item" data-university="umich">
+                            <img src="../images/umich_coat_of_arms.png" alt="University of Michigan" class="university-logo">
+                            <span class="university-name">University of Michigan</span>
+                        </div>
+                        <div class="university-item" data-university="uic">
+                            <img src="../images/iit_coat_of_arms.png" alt="University of Illinois Chicago" class="university-logo">
+                            <span class="university-name">University of Illinois Chicago</span>
+                        </div>
+                        <div class="university-item" data-university="loyola">
+                            <img src="../images/loyola_coat_of_arms.png" alt="Loyola University Chicago" class="university-logo">
+                            <span class="university-name">Loyola University Chicago</span>
+                        </div>
+                        <div class="university-item" data-university="iwu">
+                            <img src="../images/iwu_coat_of_arms.png" alt="Illinois Wesleyan University" class="university-logo">
+                            <span class="university-name">Illinois Wesleyan University</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Right Side: University Content -->
+                <div class="university-content-container">
+                    <div class="university-welcome" id="university-welcome">
+                        <div class="welcome-icon"></div>
+                        <h3>Select a University</h3>
+                        <p>Choose a university from the list to access tailored career resources, networking guides, and resume tips.</p>
+                    </div>
+                    
+                    <!-- Northwestern University Content -->
+                    <div class="university-content" id="northwestern-content" style="display: none;">
+                        <div class="university-header">
+                            <h3>Northwestern University</h3>
+                            <a href="../images/DRIVING FORWARD 2025 Program Review.pdf" target="_blank" class="pdf-link">
+                                University Career Guide
+                            </a>
+                        </div>
+                        
+                        <div class="content-sections">
+                            <div class="content-section">
+                                <button class="section-toggle active" data-section="overview">Overview</button>
+                                <div class="section-content active" id="northwestern-overview">
+                                    <h4>Career Services Overview</h4>
+                                    <p>Northwestern University offers comprehensive career services including career counseling, job search assistance, and industry networking events. The Kellogg School and other departments provide specialized resources for different fields.</p>
+                                    <ul>
+                                        <li>Career Services Center - 1st floor Norris</li>
+                                        <li>Industry-specific career advisors</li>
+                                        <li>Quarterly career fairs</li>
+                                        <li>Alumni mentorship programs</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            
+                            <div class="content-section">
+                                <button class="section-toggle" data-section="resume">Resume</button>
+                                <div class="section-content" id="northwestern-resume">
+                                    <h4>Resume & Application Tips</h4>
+                                    <p>Tailored resume advice for Northwestern students, including industry-specific formatting and content recommendations.</p>
+                                    <ul>
+                                        <li>Northwestern resume template available</li>
+                                        <li>Weekly resume review sessions</li>
+                                        <li>Industry-specific resume workshops</li>
+                                        <li>Cover letter writing assistance</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            
+                            <div class="content-section">
+                                <button class="section-toggle" data-section="network">Network</button>
+                                <div class="section-content" id="northwestern-network">
+                                    <h4>Networking Opportunities</h4>
+                                    <p>Connect with Northwestern alumni and industry professionals through various networking platforms and events.</p>
+                                    <ul>
+                                        <li>Northwestern Network alumni platform</li>
+                                        <li>Industry networking events</li>
+                                        <li>Professional organization chapters</li>
+                                        <li>LinkedIn Northwestern group</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- University of Chicago Content -->
+                    <div class="university-content" id="uchicago-content" style="display: none;">
+                        <div class="university-header">
+                            <h3>University of Chicago</h3>
+                            <a href="../images/DRIVING FORWARD 2025 Program Review.pdf" target="_blank" class="pdf-link">
+                                University Career Guide
+                            </a>
+                        </div>
+                        
+                        <div class="content-sections">
+                            <div class="content-section">
+                                <button class="section-toggle active" data-section="overview">Overview</button>
+                                <div class="section-content active" id="uchicago-overview">
+                                    <h4>Career Advancement Overview</h4>
+                                    <p>The University of Chicago's Career Advancement Office provides a wide range of advising services, experiential programs and toolkits to prepare students and recent alumni for career success. Students book one‑on‑one advising through UChicago Handshake and can access drop‑in sessions, career cohorts, industry‑specific programs and networking events. The office also maintains virtual resources like resume templates, interview toolkits and networking guides. </p>
+                                    <ul>
+                                        <li><a href="https://careeradvancement.uchicago.edu" target="_blank" rel="noopener noreferrer" class="card-header-link">Career Advancement Office</a></li>
+                                        <li><a href="" target="_blank" rel="noopener noreferrer" class="card-header-link">Specialized advisors by college and industry</a></li>
+                                        <li><a href="" target="_blank" rel="noopener noreferrer" class="card-header-link">UChicago Careers platform</a></li>
+                                        <li><a href="" target="_blank" rel="noopener noreferrer" class="card-header-link">Metcalf Internship Program</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            
+                            <div class="content-section">
+                                <button class="section-toggle" data-section="resume">Resume</button>
+                                <div class="section-content" id="uchicago-resume">
+                                    <h4>Resume & Application Resources</h4>
+                                    <p>Resume & Interview Toolkit - Virtual library offering: "Writing Resumes: A Guide for Undergraduates"; résumé templates and videos; "Curriculum Vitae: A Guide for Undergraduates"; and "Online Applicant Tracking System Tips & Tricks.” Cover-letter resources include a guide, template and video.</p>
+                                    <ul>
+                                        <li><a href="https://careeradvancement.uchicago.edu/career-toolkit/get-career-ready/resume-and-interview-toolkit/#:~:text=Resumes" target="_blank" rel="noopener noreferrer" class="card-header-link">Resume / Cover Letter Toolkit</a></li>
+                                        <li><a href="https://uchicago.app.box.com/s/blf992g5qbw69xfsady6vakcg4y9nrui" target="_blank" rel="noopener noreferrer" class="card-header-link">Resume Template</a></li>
+                                        <li><a href="https://careeradvancement.uchicago.edu/careers-in/healthcare/application-components/essays/" target="_blank" rel="noopener noreferrer" class="card-header-link">Personal Statement Tips</a></li>
+                                        <li><a href="https://www.law.uchicago.edu/news/their-own-words-admissions-essays-worked" target="_blank" rel="noopener noreferrer" class="card-header-link">Law School Samples</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            
+                            <div class="content-section">
+                                <button class="section-toggle" data-section="network">Network</button>
+                                <div class="section-content" id="uchicago-network">
+                                    <h4>UChicago Network</h4>
+                                    <p>Leverage the extensive UChicago alumni network and professional connections across various industries and locations.</p>
+                                    <ul>
+                                        <li>UChicago Connect alumni directory</li>
+                                        <li>Industry-specific alumni panels</li>
+                                        <li>Regional UChicago clubs</li>
+                                        <li>Professional mentorship matching</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- University of Michigan Content -->
+                    <div class="university-content" id="umich-content" style="display: none;">
+                        <div class="university-header">
+                            <h3>University of Michigan</h3>
+                            <a href="../images/DRIVING FORWARD 2025 Program Review.pdf" target="_blank" class="pdf-link">
+                                University Career Guide
+                            </a>
+                        </div>
+                        
+                        <div class="content-sections">
+                            <div class="content-section">
+                                <button class="section-toggle active" data-section="overview">Overview</button>
+                                <div class="section-content active" id="umich-overview">
+                                    <h4>Career Center Overview</h4>
+                                    <p>Michigan's Career Center offers extensive resources including career coaching, employer partnerships, and professional development programs.</p>
+                                    <ul>
+                                        <li>Career Center in Student Activities Building</li>
+                                        <li>School-specific career services</li>
+                                        <li>Handshake job platform</li>
+                                        <li>Michigan alumni network access</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            
+                            <div class="content-section">
+                                <button class="section-toggle" data-section="resume">Resume</button>
+                                <div class="section-content" id="umich-resume">
+                                    <h4>Resume Development</h4>
+                                    <p>Michigan-specific resume guidance with emphasis on showcasing leadership, research, and diverse experiences.</p>
+                                    <ul>
+                                        <li>Michigan resume builder tool</li>
+                                        <li>Peer resume review sessions</li>
+                                        <li>Field-specific resume formats</li>
+                                        <li>Personal statement writing support</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            
+                            <div class="content-section">
+                                <button class="section-toggle" data-section="network">Network</button>
+                                <div class="section-content" id="umich-network">
+                                    <h4>Michigan Network</h4>
+                                    <p>Access Michigan's vast alumni network and professional communities worldwide.</p>
+                                    <ul>
+                                        <li>Michigan Alumni Association</li>
+                                        <li>Industry-specific Michigan clubs</li>
+                                        <li>Wolverine network events</li>
+                                        <li>Professional mentorship programs</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- UIC Content -->
+                    <div class="university-content" id="uic-content" style="display: none;">
+                        <div class="university-header">
+                            <h3>University of Illinois Chicago</h3>
+                            <a href="../images/DRIVING FORWARD 2025 Program Review.pdf" target="_blank" class="pdf-link">
+                                University Career Guide
+                            </a>
+                        </div>
+                        
+                        <div class="content-sections">
+                            <div class="content-section">
+                                <button class="section-toggle active" data-section="overview">Overview</button>
+                                <div class="section-content active" id="uic-overview">
+                                    <h4>Career Services Overview</h4>
+                                    <p>UIC Career Services provides comprehensive support for career exploration, job search strategies, and professional development.</p>
+                                    <ul>
+                                        <li>Career Services office in Student Services Building</li>
+                                        <li>College-specific career advisors</li>
+                                        <li>UIC job portal and career fairs</li>
+                                        <li>Professional development workshops</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            
+                            <div class="content-section">
+                                <button class="section-toggle" data-section="resume">Resume</button>
+                                <div class="section-content" id="uic-resume">
+                                    <h4>Resume & Career Documents</h4>
+                                    <p>UIC-specific guidance for creating professional documents that highlight diverse experiences and urban advantages.</p>
+                                    <ul>
+                                        <li>UIC resume templates by major</li>
+                                        <li>Walk-in resume assistance</li>
+                                        <li>LinkedIn profile optimization</li>
+                                        <li>Interview preparation resources</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            
+                            <div class="content-section">
+                                <button class="section-toggle" data-section="network">Network</button>
+                                <div class="section-content" id="uic-network">
+                                    <h4>UIC Professional Network</h4>
+                                    <p>Connect with UIC alumni and professionals in Chicago's diverse business ecosystem.</p>
+                                    <ul>
+                                        <li>UIC Alumni Association network</li>
+                                        <li>Chicago professional organizations</li>
+                                        <li>Industry meetups and events</li>
+                                        <li>Flames Connect alumni platform</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Loyola Content -->
+                    <div class="university-content" id="loyola-content" style="display: none;">
+                        <div class="university-header">
+                            <h3>Loyola University Chicago</h3>
+                            <a href="../images/DRIVING FORWARD 2025 Program Review.pdf" target="_blank" class="pdf-link">
+                                University Career Guide
+                            </a>
+                        </div>
+                        
+                        <div class="content-sections">
+                            <div class="content-section">
+                                <button class="section-toggle active" data-section="overview">Overview</button>
+                                <div class="section-content active" id="loyola-overview">
+                                    <h4>Career Development Overview</h4>
+                                    <p>Loyola's Career Development Center emphasizes values-based career exploration and social justice in professional development.</p>
+                                    <ul>
+                                        <li>Career Development Center in Damen Student Center</li>
+                                        <li>Values-based career counseling</li>
+                                        <li>Rambler career platform</li>
+                                        <li>Service-learning integration</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            
+                            <div class="content-section">
+                                <button class="section-toggle" data-section="resume">Resume</button>
+                                <div class="section-content" id="loyola-resume">
+                                    <h4>Resume & Professional Materials</h4>
+                                    <p>Loyola-specific guidance for showcasing service learning, Jesuit values, and professional experiences.</p>
+                                    <ul>
+                                        <li>Loyola resume templates</li>
+                                        <li>Service-learning experience formatting</li>
+                                        <li>Values-based cover letters</li>
+                                        <li>Graduate school application support</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            
+                            <div class="content-section">
+                                <button class="section-toggle" data-section="network">Network</button>
+                                <div class="section-content" id="loyola-network">
+                                    <h4>Loyola Professional Network</h4>
+                                    <p>Connect with Loyola's mission-driven alumni network and social justice-focused professional communities.</p>
+                                    <ul>
+                                        <li>Loyola Alumni Network</li>
+                                        <li>Jesuit university network</li>
+                                        <li>Social justice professional groups</li>
+                                        <li>Rambler professional mentorship</li>
+                                    </ul>
+                                 </div>
+                             </div>
+                         </div>
+                     </div>
+                     
+                     <!-- Illinois Wesleyan University Content -->
+                    <div class="university-content" id="iwu-content" style="display: none;">
+                        <div class="university-header">
+                            <h3>Illinois Wesleyan University</h3>
+                            <a href="../images/DRIVING FORWARD 2025 Program Review.pdf" target="_blank" class="pdf-link">
+                                University Career Guide
+                            </a>
+                        </div>
+                        
+                        <div class="content-sections">
+                            <div class="content-section">
+                                <button class="section-toggle active" data-section="overview">Overview</button>
+                                <div class="section-content active" id="iwu-overview">
+                                    <h4>Career Services Overview</h4>
+                                    <p>Illinois Wesleyan University's Career Center provides comprehensive support for career exploration, internship opportunities, and post-graduation planning.</p>
+                                    <ul>
+                                        <li>Career Center in the Memorial Center</li>
+                                        <li>Individual career counseling sessions</li>
+                                        <li>Internship and job search assistance</li>
+                                        <li>Graduate school application support</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            
+                            <div class="content-section">
+                                <button class="section-toggle" data-section="resume">Resume</button>
+                                <div class="section-content" id="iwu-resume">
+                                    <h4>Resume & Application Resources</h4>
+                                    <p>IWU-specific guidance for creating professional resumes and applications that highlight liberal arts education and diverse experiences.</p>
+                                    <ul>
+                                        <li><a href="https://www.iwu.edu/career-center/students/resume-tips.pdf" target="_blank" rel="noopener noreferrer" class="card-header-link">Resume Guide - The Hart Center provides a five page resume guide that includes do's and don'ts, a list of action verbs and example resumes</a></li>
+                                        <li><a href="https://www.iwu.edu/career-center/students/cover-letter-tips.pdf" target="_blank" rel="noopener noreferrer" class="card-header-link">Cover letter guide - The Hart Center provides a two page cover letter guide that includes best practices and sample cover letter</a></li>
+                                        <li><a href="https://www.iwu.edu/career-center/" target="_blank" rel="noopener noreferrer" class="card-header-link">Students can also book résumé or CV reviews with advisers or attend drop-in hours</a></li>
+                                        <!-- <li><a href="" target="_blank" rel="noopener noreferrer" class="card-header-link"></a></li> -->
+                                    </ul>
+                                </div>
+                            </div>
+                            
+                            <div class="content-section">
+                                <button class="section-toggle" data-section="network">Network</button>
+                                <div class="section-content" id="iwu-network">
+                                    <h4>IWU Professional Network</h4>
+                                    <p>Strategies and tactics using networking and LinkedIn provide substantial benefits in your career exploration. In addition to standalone guides, career advisers in the Hart Center can provide you with best practices for Networking and LinkedIn.</p>
+                                    <ul>
+                                        <li>IWU Alumni Association network</li>
+                                        <li>Regional alumni events</li>
+                                        <li>Professional mentorship programs</li>
+                                        <li>Liberal arts professional groups</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Shared JavaScript -->
+    <script src="../static/navbar.js"></script>
+    <script>
+        // University Toolkit JavaScript
+        document.addEventListener('DOMContentLoaded', function() {
+            const universityItems = document.querySelectorAll('.university-item');
+            const universityContents = document.querySelectorAll('.university-content');
+            const universityWelcome = document.getElementById('university-welcome');
+            const searchInput = document.getElementById('university-search');
+            const universityList = document.getElementById('university-list');
+            
+            // University search functionality
+            searchInput.addEventListener('input', function() {
+                const searchTerm = this.value.toLowerCase();
+                universityItems.forEach(item => {
+                    const universityName = item.querySelector('.university-name').textContent.toLowerCase();
+                    if (universityName.includes(searchTerm)) {
+                        item.style.display = 'flex';
+                    } else {
+                        item.style.display = 'none';
+                    }
+                });
+            });
+            
+            // University selection functionality
+            universityItems.forEach(item => {
+                item.addEventListener('click', function() {
+                    const universityId = this.dataset.university;
+                    
+                    // Remove active class from all items
+                    universityItems.forEach(i => i.classList.remove('active'));
+                    
+                    // Add active class to clicked item
+                    this.classList.add('active');
+                    
+                    // Hide welcome message and all university content
+                    universityWelcome.style.display = 'none';
+                    universityContents.forEach(content => {
+                        content.style.display = 'none';
+                    });
+                    
+                    // Show selected university content
+                    const targetContent = document.getElementById(universityId + '-content');
+                    if (targetContent) {
+                        targetContent.style.display = 'block';
+                    }
+                });
+            });
+            
+            // Section toggle functionality
+            document.addEventListener('click', function(e) {
+                if (e.target.classList.contains('section-toggle')) {
+                    const section = e.target.dataset.section;
+                    const universityContent = e.target.closest('.university-content');
+                    const universityId = universityContent.id.replace('-content', '');
+                    
+                    // Remove active class from all toggles in this university
+                    const toggles = universityContent.querySelectorAll('.section-toggle');
+                    const contents = universityContent.querySelectorAll('.section-content');
+                    
+                    toggles.forEach(toggle => toggle.classList.remove('active'));
+                    contents.forEach(content => content.classList.remove('active'));
+                    
+                    // Add active class to clicked toggle
+                    e.target.classList.add('active');
+                    
+                    // Show corresponding content
+                    const targetContent = document.getElementById(universityId + '-' + section);
+                    if (targetContent) {
+                        targetContent.classList.add('active');
+                    }
+                }
+            });
+        });
+    </script>
+</body>
+</html>

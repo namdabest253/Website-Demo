@@ -122,7 +122,7 @@ function loadFooter() {
                             <li><a href="${templatePrefix}volunteer.html">Volunteer</a></li>
                             <li><a href="${templatePrefix}donate.html">Donate</a></li>
                             <li><a href="${templatePrefix}sponsor.html">Project Sponsor</a></li>
-                            <li><a href="${indexLink}#partnership">University Partners</a></li>
+                            <li><a href="${templatePrefix}apply.html">Apply</a></li>
                         </ul>
                     </div>
                     
