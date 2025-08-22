@@ -688,6 +688,13 @@ body.has-announcement-banner .header {
     position: relative;
 }
 
+/* Chatbot Section - Different background color */
+.programs-section#career-chatbot {
+    background: #ffffff 100%;
+    padding: 4rem 0;
+    margin-top: 2rem;
+}
+
 .section-header {
     text-align: center;
     margin-bottom: 80px;
@@ -1920,7 +1927,7 @@ body.has-announcement-banner .header {
 
 .testimonial-carousel {
     position: relative;
-    height: 320px;
+    height: 360px; /* increased to reduce overflow on narrow widths */
     width: 100%;
 }
 
@@ -1954,12 +1961,16 @@ body.has-announcement-banner .header {
 }
 
 .testimonial-avatar {
-    width: 150px;
-    height: 150px;
+    width: 140px;
+    height: 140px;
     border-radius: 50%;
     margin: 0 auto 1.5rem auto;
     border: 3px solid var(--primary-green);
     display: block;
+}
+
+.testimonial-content {
+    padding-bottom: 2.25rem; /* reserve space above dots to avoid overlap */
 }
 
 .testimonial-content blockquote {
@@ -1979,23 +1990,53 @@ body.has-announcement-banner .header {
 }
 
 /* Responsive fixes for testimonial carousel */
+@media (max-width: 1024px) {
+    .testimonial-carousel {
+        height: 340px;
+    }
+    .testimonial-avatar {
+        width: 120px;
+        height: 120px;
+    }
+}
+
 @media (max-width: 768px) {
     .testimonial-carousel-container {
-        min-height: 280px;
+        min-height: 300px;
         padding: 1.5rem;
     }
     
     .testimonial-carousel {
-        height: 250px;
+        height: 320px; /* increased from 250 to prevent clipping */
     }
     
     .testimonial-content {
         max-width: 300px;
-        padding: 0.5rem;
+        padding: 0.5rem 0.5rem 2.25rem; /* keep bottom padding for dots */
+    }
+    
+    .testimonial-avatar {
+        width: 110px;
+        height: 110px;
+        margin-bottom: 1rem;
     }
     
     .testimonial-content blockquote {
         font-size: 1rem;
+        line-height: 1.5;
+    }
+}
+
+@media (max-width: 480px) {
+    .testimonial-carousel {
+        height: 300px;
+    }
+    .testimonial-avatar {
+        width: 95px;
+        height: 95px;
+    }
+    .testimonial-content {
+        max-width: 260px;
     }
 }
 

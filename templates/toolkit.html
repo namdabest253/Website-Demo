@@ -27,14 +27,15 @@
                     Your Personalized University Toolkit delivers the roadmap to your school specific resources and links.
                 </p>
                 <div class="hero-buttons">
-                    <a href="school.html" class="btn-primary">Try Career Chatbot</a>
+                    <a href="#university-toolkit" class="btn-primary">Resource Portal</a>
+                    <a href="#career-chatbot" class="btn-primary">Try Career Chatbot</a>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- University Toolkit Section -->
-    <section class="university-toolkit-section">
+    <section class="university-toolkit-section" id="university-toolkit">
         <div class="container">
             <div class="section-header">
                 <h2 class="section-title">University Resource Portal</h2>
@@ -73,12 +74,76 @@
         </div>
     </section>
 
+    <!-- AI Career Chatbot Section -->
+    <section class="programs-section" id="career-chatbot">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">AI-Powered Career Guidance</h2>
+                <p class="section-subtitle">
+                    Our intelligent chatbot uses real school data to provide personalized career advancement 
+                    advice and answer your questions about academic and professional pathways.
+                </p>
+            </div>
+
+            <!-- Chatbot Container -->
+            <div class="chatbot-container">
+                <div class="chatbot-header">
+                    <div class="chatbot-info">
+                        <h3>Career Guidance Assistant</h3>
+                        <p>Ask questions about career paths, academic programs, and professional development opportunities at your school.</p>
+                    </div>
+                    <div class="chatbot-status">
+                        <span class="status-indicator"></span>
+                        <span class="status-text">Online</span>
+                    </div>
+                </div>
+                
+                <div class="chatbot-iframe-wrapper">
+                    <iframe 
+                        src="https://chatbot-demo-trew.onrender.com/" 
+                        class="career-chatbot-iframe"
+                        title="Career Guidance Chatbot"
+                        frameborder="0"
+                        loading="lazy">
+                    </iframe>
+                </div>
+                
+                <div class="chatbot-footer">
+                    <p class="chatbot-disclaimer">
+                        💡 <strong>Tip:</strong> Try asking about career paths in your field, internship opportunities, 
+                        or what courses can help you reach your career goals.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Shared JavaScript -->
     <script src="../static/navbar.js"></script>
     <script src="../static/university-data.js"></script>
     <script>
         // University Toolkit JavaScript
         document.addEventListener('DOMContentLoaded', function() {
+            // Smooth scrolling with custom offset
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const targetId = this.getAttribute('href').substring(1);
+                    const targetElement = document.getElementById(targetId);
+                    
+                    if (targetElement) {
+                        // Custom scroll offset - adjust this value to control how far down the scroll goes
+                        const scrollOffset = 80; // Change this number to adjust scroll position
+                        const targetPosition = targetElement.offsetTop - scrollOffset;
+                        
+                        window.scrollTo({
+                            top: targetPosition,
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+
             // Generate university menu and content from data
             generateUniversityMenu();
             loadAllUniversityContent();
@@ -127,28 +192,26 @@
                 });
             });
             
-            // Section toggle functionality
+            // Section toggle functionality (allow multiple open, toggle independently)
             document.addEventListener('click', function(e) {
-                if (e.target.classList.contains('section-toggle')) {
-                    const section = e.target.dataset.section;
-                    const universityContent = e.target.closest('.university-content');
-                    const universityId = universityContent.id.replace('-content', '');
-                    
-                    // Remove active class from all toggles in this university
-                    const toggles = universityContent.querySelectorAll('.section-toggle');
-                    const contents = universityContent.querySelectorAll('.section-content');
-                    
-                    toggles.forEach(toggle => toggle.classList.remove('active'));
-                    contents.forEach(content => content.classList.remove('active'));
-                    
-                    // Add active class to clicked toggle
-                    e.target.classList.add('active');
-                    
-                    // Show corresponding content
-                    const targetContent = document.getElementById(universityId + '-' + section);
-                    if (targetContent) {
-                        targetContent.classList.add('active');
-                    }
+                const toggleEl = e.target.closest('.section-toggle');
+                if (!toggleEl) return;
+                
+                const section = toggleEl.dataset.section;
+                const universityContent = toggleEl.closest('.university-content');
+                if (!universityContent) return;
+                const universityId = universityContent.id.replace('-content', '');
+                const targetContent = document.getElementById(universityId + '-' + section);
+                
+                const isActive = toggleEl.classList.contains('active');
+                
+                // Toggle only this section
+                if (isActive) {
+                    toggleEl.classList.remove('active');
+                    if (targetContent) targetContent.classList.remove('active');
+                } else {
+                    toggleEl.classList.add('active');
+                    if (targetContent) targetContent.classList.add('active');
                 }
             });
         });
